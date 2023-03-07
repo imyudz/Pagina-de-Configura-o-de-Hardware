@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap');
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #243b55;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3c6491;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fdb913;
+}
+
+html {
+  height: 100%;
+
+}
+
+.logo {
+  background-size: 30% 30%;
+  float: right;
+  max-width: 500px;
+  padding-top: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url("Imgs/ImgBackgroundResize.jpg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-color: #243b55;
+  font-family: 'Exo', sans-serif;
+}
+
+
+.main-box {
+  padding-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #0F1823;
+  box-sizing:border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  font-family: 'Exo', sans-serif;
+}
+
+.main-box h2,
+h3 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fdb913;
+  text-align: center;
+}
+
+.main-box .user-box {
+  position: relative;
+}
+
+.main-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fdb913;
+  outline: none;
+  background: transparent;
+  font-family: 'Exo', sans-serif;
+  align-items: center;
+  text-align: center;
+}
+
+.main-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.main-box .user-box input:focus~label,
+.main-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #fdb913;
+  font-size: 12px;
+}
+
+.main-box form .animacao {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fdb913;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin-left: 20%;
+  margin-right: 20%;
+  transition: .5s;
+  letter-spacing: 4px
+}
+
+.main-box .animacao:hover {
+  background: #fdb913;
+  color: #0F1823;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #fdb913,
+    0 0 25px #fdb913,
+    0 0 50px #fdb913,
+    0 0 100px #fdb913;
+}
+
+.main-box .animacao span {
+  position: absolute;
+  display: block;
+
+}
+
+.main-box .animacao span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fdb913);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.main-box .animacao span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #fdb913);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.main-box .animacao span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #fdb913);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.main-box .animacao span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fdb913);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+#InputIp {
+  text-align: center;
+}
+
+#input1 {
+  text-align: center;
+}
+
+#input2 {
+  text-align: center;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8%;
+  margin-top: 5%;
+  width: 100%;
+} */
+
+
+.select select {
+  font-family: 'Exo', sans-serif;
+  font-size: medium;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 2px solid #fdb913;
+  border-radius: 31px;
+  background: #0F1823;
+  color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+
+.select select:hover,
+.select select:focus {
+  color: #fdb913;
+  background: #0F1823;
+}
+
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.select select:hover~.select_arrow,
+.select select:focus~.select_arrow {
+  border-color: #000000;
+}
+
+.select select:disabled~.select_arrow {
+  border-top-color: #cccccc;
+}
+
+.select option {
+  text-align: center;
+  border-radius: 20px;
+  font-family: 'Exo', sans-serif;
+
+}
+
+
+
+
+.control {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 15px;
+  padding-top: 1px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control_indicator {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 21px;
+  width: 23px;
+  background: #0F1823;
+  border: 2px solid #fdb913;
+  border-radius: 3px;
+}
+
+.control:hover input~.control_indicator,
+.control input:focus~.control_indicator {
+  background: #0F1823;
+}
+
+.control input:checked~.control_indicator {
+  background: #0F1823;
+}
+
+.control:hover input:not([disabled]):checked~.control_indicator,
+.control input:checked:focus~.control_indicator {
+  background: #0F1823;
+}
+
+.control input:disabled~.control_indicator {
+  background: #ffffff;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control_indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.control input:checked~.control_indicator:after {
+  display: block;
+}
+
+.control-checkbox .control_indicator:after {
+  left: 9px;
+  top: 3px;
+  width: 4px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control-checkbox input:disabled~.control_indicator:after {
+  border-color: #0F1823;
+}
+
+.control-checkbox .control_indicator::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-left: -1.3rem;
+  margin-top: -1.3rem;
+  background: #2aa1c0;
+  border-radius: 3rem;
+  opacity: 0.5;
+  z-index: 99999;
+  transform: scale(0);
+}
+
+@keyframes s-ripple {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.control-checkbox input+.control_indicator::before {
+  animation: s-ripple 250ms ease-out;
+}
+
+.control-checkbox input:checked+.control_indicator::before {
+  animation-name: s-ripple-dup;
+}
+
+.control-group {
+  color: white;
+}
+
+input[type=submit] {
+  border-radius: 20px;
+  color: #fdb913;
+  background-color: #0f1823;
+  font-size: 19px;
+  border: 1px solid #0f1823;
+  padding: 15px 50px;
+  cursor: pointer;
+
+}
+
+input[type=submit]:hover {
+  color: #0f1823;
+  border-radius: 20px;
+  background-color: #fdb913;
+  border: 1px solid #fdb913;
+
+  box-shadow: 0 0 5px #fdb913,
+    0 0 25px #fdb913,
+    0 0 50px #fdb913,
+    0 0 100px #fdb913;
+}
+.main-box .titulo_link {
+
+  color: #fdb913;
+  text-decoration-line: initial;
+}
+.main-box .titulo_link:hover{
+  color: #0f1823;
+  border-radius: 20px;
+  background-color: #fdb913;
+  border: 1px solid #fdb913;
+  box-shadow: 0 0 5px #fdb913,
+    0 0 25px #fdb913,
+    0 0 50px #fdb913,
+    0 0 100px #fdb913;
+}
+
+details {
+  margin: 40px;
+}
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 15px 40px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+  transform: scale(2.1);
+  position: fixed;
+}
+summary::before,
+summary::after {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-color: white;
+}
+summary::before {
+  content: "";
+
+}
+summary::after {
+  content: "III";
+  letter-spacing: -1px;
+}
+summary:hover {
+  transform: scale(3.1);
+  color: #fdb913;
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  margin-left: 55px;
+  padding-top: 24px;
+  position: fixed;
+  height: 0;
+  width: fit-content;
+  border-radius: 20px;
+  background-color: #243b55;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 40px;
+  margin: 0 16px;
+  color: white;
+  border-bottom: 2px solid #fdb913;
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  color: #fdb913;
+}
+
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.container{
+  background-color: #fdb913;
+  width: 610px;
+  height: 510px;
+  padding-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #0F1823;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+  font-family: 'Exo', sans-serif;
+}
+.container h2{
+  margin: 0 0 10px;
+  padding: 0;
+  color: #fdb913;
+  text-align: center;
+}
+.conteudo-io{
+  height: 400px;
+  width: 610px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+}
+.seleciona-io{
+  margin-bottom: 2%;
+  margin-top: 2%;
+  background-color: #1f3349;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  border-radius: 10px;
+}
+.seleciona-io h4{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: #0F1823;
+  color: #fdb913;
+}
+.seleciona-io select{
+  font-family: 'Exo', sans-serif;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 2px solid #fdb913;
+  border-radius: 31px;
+  background: #0F1823;
+  color: white;
+  appearance: none;
+}
+
+
+.container form .animacao {
+  position: relative;
+  display: inline-block;
+  padding: 5px 5px;
+  color: #fdb913;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  transition: .5s;
+  letter-spacing: 4px;
+  text-align: center;
+}
+
+.container .animacao:hover {
+  background: #fdb913;
+  color: #0F1823;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #fdb913,
+    0 0 25px #fdb913,
+    0 0 50px #fdb913,
+    0 0 100px #fdb913;
+}
+
+.container .animacao span {
+  position: absolute;
+  display: block;
+
+}
+
+.container .animacao span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fdb913);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.container .animacao span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #fdb913);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.container .animacao span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #fdb913);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.container .animacao span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fdb913);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+    </style>
+
+    <title>Configuração de IO</title>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <h2>Configure I/O</h2>
+        <form method="post" action="">
+            <!-- <h3>Configure as Entradas e Saídas</h3> -->
+            <div class="conteudo-io">
+                <div class="seleciona-io">
+                    <h4>I/O1</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O2</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O3</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O4</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O5</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O6</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O7</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="seleciona-io">
+                    <h4>I/O8</h4>
+                    <select id="Sistema_Comunicacao">
+                        <option>Selecione Configuração</option>
+                        <option name="tipo_comunicacao">Entrada</option>
+                        <option name="tipo_comunicacao">Saída</option>
+                        <option name="tipo_comunicacao">Sem Uso</option>
+                    </select>
+                </div>
+                <div class="animacao">
+                    <span></span>
+                    <span></span>
+                    <a href="index.html"><input type="submit"></a><!--name="submitButton" value="Enviar"-->
+                    <span></span>
+                    <span></span>
+                </div>
+        </form>
+    </div>
+</body>
+
+
+</html>
