@@ -51,8 +51,7 @@ body {
   border-radius: 10px;
   font-family: 'Exo', sans-serif;
 }
-.main-box h2,
-h3 {
+.main-box h2, h3 {
   margin: 0 0 30px;
   padding: 0;
   color: #fdb913;
@@ -531,14 +530,13 @@ header{
 }
 
 .navigation{
-  display: flex;
-  justify-content: left;
-  align-items:flex-start;
-  min-height: 190vh;
-  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  position: fixed;
   background: #243b55; 
   width: 40px;
-  box-shadow: 10px 0 0 #3c6491; 
+  box-shadow: 10px 0 0 #fcba12; 
   border-left: 10px solid #243b55;
   overflow-x: hidden;
   transition: 0.5s;
@@ -596,7 +594,8 @@ header{
 }
 
 .navigation ul li.active{
-  background-color: #3c6491;
+  background-color: #fcba12;
+  transition: .5s;
 }
 
 .navigation ul li.active a::before{
@@ -608,7 +607,8 @@ header{
   height: 30px;
   background: #243b55;
   border-radius: 50%;
-  box-shadow: 15px 15px 0 #3c6491;
+  box-shadow: 15px 15px 0 #fcba12;
+  transition: .5s;
 }
 .navigation ul li.active a::after{
   content: '';
@@ -619,9 +619,9 @@ header{
   height: 30px;
   background: #243b55;
   border-radius: 50%;
-  box-shadow: 15px -15px 0 #3c6491;
+  box-shadow: 15px -15px 0 #fcba12;
+  transition: .5s;
 }
-
 
 #main-bar-section{
     padding: 2%;
@@ -653,7 +653,7 @@ header{
 .progress .progress-bar{
     width: 50%;
     height: 100%;
-    background-color: #3c6491;
+    background-color: #fcba12;
     border-radius: 10px;
     position: relative;
     transition: all .5s;
@@ -677,12 +677,14 @@ header{
 
 
 .vagas-section{
+    margin-top: 4%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    align-content: space-between;
+    align-content: center;
+    text-align: center;
     width: 100%;
 }
 
@@ -691,6 +693,7 @@ header{
     padding: 40px;    
     width: 20%;
     margin: 10px;
+    margin-bottom: 5%;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
@@ -706,11 +709,79 @@ header{
 .btn{
     margin: 0;
     background: none;
-    border: 2px solid #fff;
-    width: 50px;
-    border-radius: 50%;
-    height: 50px;
-    font-weight: 700;
-    font-size: 0.8rem;
+    border: 2px solid #fdb913;
+    color: #fcba12;
+    width: 100px;
+    height: 41px;
+    text-transform: uppercase;
+    border-radius: 49px;
+    font-family: 'Exo';
+    font-size: .8rem;
+    font-weight: bold;
     transition: 1s ease-in;
+    position: relative;
+    left: 2%;
+    text-align: center;
 }
+
+.btn:hover{
+  margin: 0;
+  background: #fcba12;
+  border: solid #fcba12;
+  box-shadow: 0 0 5px #fcba12,
+              0 0 25px #fcba12,
+              0 0 50px #fcba12,
+              0 0 100px #fcba12;
+  transition: 0.5s ease-in-out;
+  color: #fff;
+  cursor: pointer;
+}
+
+.vagas-general h1{
+    display: inline;
+    color: #fcba12;
+    margin: 0;
+}
+.vagas-general{
+  text-align: center;
+}
+
+.container-config{
+  text-align: center;
+  /* background: #2aa1c0; */
+  display: grid;
+  grid-template-rows: [row1-start] 40% [row1-end] 50% [third-line] auto [last-line];
+}
+.header{
+  background:#415469;
+  margin: 0;
+  align-self: center;
+}
+
+.add-vagas{
+  background: #cccccc;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.description-space{
+  align-self: flex-end;
+}
+
+.section-vagas{
+  background: #fcba12;
+  display: flex;
+  justify-content: center;
+}
+
+.inputs-space{
+  background: #000000;
+}
+.description-space{
+  background-color: green;
+}
+
