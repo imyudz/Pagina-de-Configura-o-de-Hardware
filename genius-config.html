@@ -13,7 +13,7 @@
 </head>
 
 
-<body>
+<body class="body-genius-config">
   <header>
     <div class="navigation">
       <ul>
@@ -38,25 +38,64 @@
     <div class="container-config">
         <h1>Genius Configuration</h1>
       <div class="add-vagas">
-        <div class="description-space">
-          <h1>Adicionar Vagas</h1>
+        <div class="background-description-space">
+          <div class="description-space">
+            <div class="caixa-titulo-desc-space">
+              <span class="icon-add-vagas"><ion-icon name="add-circle-outline"></ion-icon></span>
+              <span class="title-add-vagas">Adicionar Vagas</span>
+            </div>
+            <p>Configure aqui as vagas a serem adicionadas. Assim que adicionadas, poderão ser configuradas uma a uma.</p>
+          </div>
         </div>
         <div class="inputs-space">
           <h3>Número de Vagas</h3>
-          <input type="number" name="" id="">
+            <div class="container-number-input">
+              <button id="decrement" onclick="stepper(this)"> - </button>
+              <input type="number" min="0" max="60" step="1" name="quant-vagas" value="0" id="input-vagas" readonly required>
+              <button id="increment" onclick="stepper(this)"> + </button>
+            </div>
         </div>
-        <a href=""><button class="btn">Add Vagas</button></a>
+        <a><button class="btn">Add Vagas</button></a>
       </div>
-      <form action="" method="post">
+      <div class="background-vagas">
+        <form action="" method="post" class="form-vagas">
           <div class="section-vagas">
             <div class="inputs-space">
-              <input type="number" name="" id="">
+              <h3>Início da Vaga</h3>
+              <span class="container-number-input">
+                <input id="inicio-vaga1" name="inicio-vaga1" type="number" min="0" required>
+              </span>
             </div>
-            <div class="description-space">
-              <h1>Vaga 1</h1>
+            <div class="inputs-space">
+              <h3>Fim da Vaga</h3>
+              <span class="container-number-input">
+                <input id="fim-vaga1" name="fim-vaga1" type="number" min="0" required>
+              <span/>
             </div>
+            <div class="inputs-space">
+              <h3>Fita da Vaga</h3>
+              <span class="container-number-input">
+                <input id="fita-vaga1" name="fita-vaga1" type="number" min="0" max="4" required>
+              </span>
+            </div>
+            <div class="checks-space">
+              <div class="box-demarcacao">
+                <input type="checkbox" name="demarcacao" id="chck-demarcacao">
+                <h3>Demarcação</h3>
+              </div>
+              <div class="box-piscante">
+                <input type="checkbox" name="demarcacao" id="chck-piscante">
+                <h3>Piscante</h3>
+              </div>
+            </div>
+              <div class="description-space">
+                <h1>Vaga 1</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta</p>
+              </div>
           </div>
       </form>
+      </div>
+        
     </div>
   </main>
   <!--JavaScript-->
@@ -65,7 +104,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="menu-transition.js"></script>
-  <script src="generalApp.js"></script>
+  <script src="configApp.js"></script>
 </body>
 
 </html>

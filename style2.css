@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* width */
 ::-webkit-scrollbar {
@@ -706,35 +706,10 @@ header{
     font-weight: 700;
 }
 
-.btn{
-    margin: 0;
-    background: none;
-    border: 2px solid #fdb913;
-    color: #fcba12;
-    width: 100px;
-    height: 41px;
-    text-transform: uppercase;
-    border-radius: 49px;
-    font-family: 'Exo';
-    font-size: .8rem;
-    font-weight: bold;
-    transition: 1s ease-in;
-    position: relative;
-    left: 2%;
-    text-align: center;
-}
 
-.btn:hover{
-  margin: 0;
-  background: #fcba12;
-  border: solid #fcba12;
-  box-shadow: 0 0 5px #fcba12,
-              0 0 25px #fcba12,
-              0 0 50px #fcba12,
-              0 0 100px #fcba12;
-  transition: 0.5s ease-in-out;
-  color: #fff;
-  cursor: pointer;
+
+.body-genius-config{
+  background: #0F1823;
 }
 
 .vagas-general h1{
@@ -746,42 +721,273 @@ header{
   text-align: center;
 }
 
-.container-config{
-  text-align: center;
-  /* background: #2aa1c0; */
-  display: grid;
-  grid-template-rows: [row1-start] 40% [row1-end] 50% [third-line] auto [last-line];
+
+.container-config h1{
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: 'Exo';
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-left: 7%;
+  color:#fcba12;
 }
-.header{
-  background:#415469;
-  margin: 0;
-  align-self: center;
+
+.container-config h3, h2{
+  text-transform: uppercase;
 }
 
 .add-vagas{
-  background: #cccccc;
-  padding: 40px;
+  border-top: 8px double #fdb913;
+  padding-top: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  padding-bottom: 2%;
+  border-bottom: 3px dashed #fdb913;
 }
 
-.description-space{
-  align-self: flex-end;
-}
-
-.section-vagas{
+.add-vagas .background-description-space{
   background: #fcba12;
+  border-radius: 10px;
+  margin-left: -1%;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.89) 5px 5px 2px;
+  transition: 2s;
+}
+
+.add-vagas .background-description-space:hover{
+  box-shadow: rgba(240, 221, 46, 0.4) 5px 5px, rgba(240, 204, 46, 0.3) 10px 10px, rgba(240, 211, 46, 0.2) 15px 15px;
+  transition: .8s;
+}
+
+.add-vagas .description-space{
+  margin-left: 16px;
+  width: 300px;
+  height: 154px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.inputs-space{
-  background: #000000;
-}
-.description-space{
-  background-color: green;
+.add-vagas .caixa-titulo-desc-space{
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -2px;
+  word-spacing: -2px;
+  justify-content: flex-start;
 }
 
+.add-vagas .description-space p{
+  display: flex;
+  width: 300px;
+  font-size: 15.2px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 0;
+  line-height: 22px;
+  text-shadow: rgba(0, 0, 0, 0.571) 2.4px 2.4px 3.2px;
+}
+
+
+.add-vagas .icon-add-vagas{
+  font-size: 40px;
+  position: relative;
+  padding: 0;
+  margin-right: 10px;
+  margin-top: 3%;
+  align-self:flex-end;
+}
+
+.add-vagas .title-add-vagas{
+  font-size: 27.6px;
+}
+
+.add-vagas .inputs-space{
+  text-align: center;
+  box-sizing: border-box;
+  margin-left: -10%;
+}
+
+.add-vagas .inputs-space h3{
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10%;
+  text-transform: uppercase;
+  font-size: 23px;
+  text-align: center;
+}
+
+.add-vagas .inputs-space .container-number-input{
+  font-family: 'Exo';
+  font-weight: 800;
+  display: flex;
+  background-color: #fff;
+  border-radius: 40px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0, 0.15);
+}
+
+.add-vagas .inputs-space .container-number-input input[type="number"]{
+  -moz-appearance: textfield;
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  border: none;
+  background-color: #ffffff;
+  color: #202030;
+}
+.add-vagas .inputs-space .container-number-input input::-webkit-inner-spin-button,
+.add-vagas .inputs-space .container-number-input input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-vagas .inputs-space .container-number-input button{
+  color: #fcba12;
+  background-color: #fff;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.add-vagas .inputs-space .container-number-input #decrement{
+  padding: 10px 35px 10px 20px;
+  border-radius:40px 0 0 40px;
+}
+.add-vagas .inputs-space .container-number-input #increment{
+  padding: 10px 20px 10px 20px;
+  border-radius: 0 40px 40px 0; 
+}
+
+.btn{
+  margin: 0;
+  background: none;
+  border: 2px solid #fdb913;
+  color: #fcba12;
+  width: 130px;
+  height: 47px;
+  text-transform: uppercase;
+  border-radius: 49px;
+  font-family: 'Exo';
+  font-size: 1rem;
+  font-weight: 700;
+  transition: 1s ease-in;
+  position: relative;
+  left: 5%;
+  text-align: center;
+}
+
+.btn:hover{
+margin: 0;
+background: #fcba12;
+border: solid #fcba12;
+box-shadow: 0 0 5px #fcba12,
+            0 0 25px #fcba12,
+            0 0 50px #fcba12,
+            0 0 100px #fcba12;
+transition: 0.5s ease-in-out;
+color: #fff;
+cursor: pointer;
+}
+
+.background-vagas{
+  text-align: center;
+}
+
+.section-vagas{
+  position: relative;
+  left: 11%;
+  display: flex;
+  padding-top: 1%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 2%;
+  background: #243b55;
+  width: 80%;
+  margin-top: 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: rgba(0, 0, 0, 0.89) 5px 5px 2px;
+  transition: 1s;
+}
+
+.section-vagas:hover{
+    box-shadow: rgba(27, 25, 103, 0.4) 5px 5px, rgba(26, 20, 77, 0.3)10px 10px;
+    transition: .8s;
+}
+
+.section-vagas .description-space{
+  margin-left: 16px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+}
+
+.section-vagas .inputs-space{
+  display:block;
+  text-align: center;
+}
+
+.section-vagas .box-demarcacao{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 6%;
+}
+.section-vagas .box-piscante{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 6%;
+}
+.section-vagas .description-space h1{
+  text-align: right;
+  margin:0;
+}
+
+.section-vagas .description-space p{
+  width: 220px;
+  font-weight: 300;
+  font-size: 14.9px;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.section-vagas .inputs-space h3{
+  font-size: 15px;
+}
+
+.section-vagas .checks-space h3{
+  font-size: 15px;
+  margin: 0;
+  text-align: left;
+}
+
+.section-vagas .inputs-space .container-number-input input[type="number"] {
+  height: 30px;
+  border-radius: 40px;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+
+.section-vagas .inputs-space .container-number-input {
+  position: relative;
+}
+
+.section-vagas .inputs-space .container-number-input input[type="number"]{
+  font-family: 'Exo';
+  font-weight: 600;
+  text-align: center;
+  background-color: #fff;
+  font-size: 1rem;
+}
