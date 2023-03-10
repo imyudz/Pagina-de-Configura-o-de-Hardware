@@ -27,58 +27,60 @@ function adicionaVaga(quant_vagas, vagas_atuais){
         alert(quant_vagas);
         for (let i = vagas_atuais+1; i <= (vagas_atuais + quant_vagas); i++) {
 
-            let mainContainer = document.querySelector(".form-vagas");
-                let div__sectionVagas = document.createElement("div");
-                div__sectionVagas.setAttribute("class", "section-vagas");
+            // let mainContainer = document.querySelector(".form-vagas");
+            let div__sectionVagas = document.createElement("div");
+            div__sectionVagas.setAttribute("class", "section-vagas");
 
-                    let div__inputsSpace = document.createElement("div");
-                    div__inputsSpace.setAttribute("class", "inputs-space");
-                        let h3__inputsSpace = document.createElement("h3");
-                        h3__inputsSpace.textContent = "Início da Vaga";
-                        let span__inputsSpace = document.createElement("span");
-                        span__inputsSpace.setAttribute("class", "container-number-input");
-                            let input__span__inputsSpace = document.createElement("input");
-                            input__span__inputsSpace.setAttribute("id", String("inicio-vaga"+i));
-                            input__span__inputsSpace.setAttribute("name", String("inicio-vaga"+i));
-                            input__span__inputsSpace.setAttribute("type", "number");
-                            input__span__inputsSpace.setAttribute("min", "0");
-                            input__span__inputsSpace.required = true;
+            //         let div__inputsSpace = document.createElement("div");
+            //         div__inputsSpace.setAttribute("class", "inputs-space");
+            //             let h3__inputsSpace = document.createElement("h3");
+            //             h3__inputsSpace.textContent = "Início da Vaga";
+            //             let span__inputsSpace = document.createElement("span");
+            //             span__inputsSpace.setAttribute("class", "container-number-input");
+            //                 let input__span__inputsSpace = document.createElement("input");
+            //                 input__span__inputsSpace.setAttribute("id", String("inicio-vaga"+i));
+            //                 input__span__inputsSpace.setAttribute("name", String("inicio-vaga"+i));
+            //                 input__span__inputsSpace.setAttribute("type", "number");
+            //                 input__span__inputsSpace.setAttribute("min", "0");
+            //                 input__span__inputsSpace.required = true;
 
-                    let div__inputsSpace2 = document.createElement("div");
-                    div__inputsSpace2.setAttribute("class", "inputs-space");
-                        let h3__inputsSpace2 = document.createElement("h3");
-                        h3__inputsSpace2.textContent = "Fim da Vaga";
-                        let span__inputsSpace2 = document.createElement("span");
-                        span__inputsSpace2.setAttribute("class", "container-number-input");
-                            let input__span__inputsSpace2 = document.createElement("input");
-                            input__span__inputsSpace2.setAttribute("id", String("fim-vaga"+i));
-                            input__span__inputsSpace2.setAttribute("name", String("fim-vaga"+i));
-                            input__span__inputsSpace2.setAttribute("type", "number");
-                            input__span__inputsSpace2.setAttribute("min", "0");
-                            input__span__inputsSpace2.required = true;
+            //         let div__inputsSpace2 = document.createElement("div");
+            //         div__inputsSpace2.setAttribute("class", "inputs-space");
+            //             let h3__inputsSpace2 = document.createElement("h3");
+            //             h3__inputsSpace2.textContent = "Fim da Vaga";
+            //             let span__inputsSpace2 = document.createElement("span");
+            //             span__inputsSpace2.setAttribute("class", "container-number-input");
+            //                 let input__span__inputsSpace2 = document.createElement("input");
+            //                 input__span__inputsSpace2.setAttribute("id", String("fim-vaga"+i));
+            //                 input__span__inputsSpace2.setAttribute("name", String("fim-vaga"+i));
+            //                 input__span__inputsSpace2.setAttribute("type", "number");
+            //                 input__span__inputsSpace2.setAttribute("min", "0");
+            //                 input__span__inputsSpace2.required = true;
 
-                    let div__inputsSpace3 = document.createElement("div");
-                    div__inputsSpace3.setAttribute("class", "inputs-space");
-                        let h3__inputsSpace3 = document.createElement("h3");
-                        h3__inputsSpace3.textContent = "Fita da Vaga";
-                        let span__inputsSpace3 = document.createElement("span");
-                        span__inputsSpace3.setAttribute("class", "container-number-input");
-                            let input__span__inputsSpace3 = document.createElement("input");
-                            input__span__inputsSpace3.setAttribute("id", String("fita-vaga"+i));
-                            input__span__inputsSpace3.setAttribute("name", String("fita-vaga"+i));
-                            input__span__inputsSpace3.setAttribute("type", "number");
-                            input__span__inputsSpace3.setAttribute("min", "0");
-                            input__span__inputsSpace3.setAttribute("max", "4");
-                            input__span__inputsSpace3.required = true;
+            //         let div__inputsSpace3 = document.createElement("div");
+            //         div__inputsSpace3.setAttribute("class", "inputs-space");
+            //             let h3__inputsSpace3 = document.createElement("h3");
+            //             h3__inputsSpace3.textContent = "Fita da Vaga";
+            //             let span__inputsSpace3 = document.createElement("span");
+            //             span__inputsSpace3.setAttribute("class", "container-number-input");
+            //                 let input__span__inputsSpace3 = document.createElement("input");
+            //                 input__span__inputsSpace3.setAttribute("id", String("fita-vaga"+i));
+            //                 input__span__inputsSpace3.setAttribute("name", String("fita-vaga"+i));
+            //                 input__span__inputsSpace3.setAttribute("type", "number");
+            //                 input__span__inputsSpace3.setAttribute("min", "0");
+            //                 input__span__inputsSpace3.setAttribute("max", "4");
+            //                 input__span__inputsSpace3.required = true;
                     
-                    let div__decriptionSpace = document.createElement("div");
-                    div__decriptionSpace.setAttribute("class", "description-space");
-                        let h1__descriptionSpace = document.createElement("h1");
-                        h1__descriptionSpace.textContent = String("Vaga "+i);
-                        let p__descriptionSpace = document.createElement("p");
-                        p__descriptionSpace.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta";
+            //         let div__decriptionSpace = document.createElement("div");
+            //         div__decriptionSpace.setAttribute("class", "description-space");
+            //             let h1__descriptionSpace = document.createElement("h1");
+            //             h1__descriptionSpace.textContent = String("Vaga "+i);
+            //             let p__descriptionSpace = document.createElement("p");
+            //             p__descriptionSpace.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta";
+            div__sectionVagas.innerHTML = "";
 
-            mainContainer.appendChild(div__sectionVagas);
+            const elementoExistente = document.querySelector('.animacao');
+            mainContainer.insertBefore(div__sectionVagas, elementoExistente);
 
             div__sectionVagas.appendChild(div__inputsSpace);
             div__sectionVagas.appendChild(div__inputsSpace2);
@@ -99,6 +101,7 @@ function adicionaVaga(quant_vagas, vagas_atuais){
 
             div__decriptionSpace.appendChild(h1__descriptionSpace);
             div__decriptionSpace.appendChild(p__descriptionSpace);
+
             minhasVagas = i;
             botaoJaApertado = true;
         }
