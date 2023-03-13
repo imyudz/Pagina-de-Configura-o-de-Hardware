@@ -44,7 +44,6 @@ btnAddVagas.addEventListener("click", function() {
     }
 });
 
-
 function adicionaVaga(quant_vagas, vagas_atuais){
     if (quant_vagas == 0) {
         return;
