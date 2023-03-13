@@ -1,5 +1,5 @@
-const vagasExistentes = document.querySelectorAll(".section-vagas");
-var minhasVagas;
+var vagasExistentes = document.querySelectorAll(".section-vagas");
+var minhasVagas = 0;
 var numeroVagas;
 var botaoJaApertado;
 const inputNumber = document.getElementById("input-vagas");
@@ -20,111 +20,85 @@ function stepper(btn){
     }
 }
 
+
+const btnAddVagas = document.querySelector(".btn")
+btnAddVagas.addEventListener("click", function() {
+    console.log("clickado");
+    console.log(minhasVagas);
+    if (vagasExistentes.length > 0) {
+        console.log("oi");
+        vagasExistentes.forEach(vaga => {
+            if(!botaoJaApertado){
+                minhasVagas = vaga.querySelector(".description-space").querySelector("h1").textContent;
+                minhasVagas = minhasVagas.split(" ");
+                minhasVagas = parseInt(minhasVagas[1]);
+            }else{
+                return;
+            }
+        });
+        console.log(numeroVagas, minhasVagas);
+        adicionaVaga(numeroVagas, minhasVagas);
+    }else{
+        console.log(numeroVagas, minhasVagas);
+        adicionaVaga(numeroVagas, minhasVagas);
+    }
+});
+
+
 function adicionaVaga(quant_vagas, vagas_atuais){
     if (quant_vagas == 0) {
         return;
     }else{
         alert(quant_vagas);
         for (let i = vagas_atuais+1; i <= (vagas_atuais + quant_vagas); i++) {
-
-            // let mainContainer = document.querySelector(".form-vagas");
+            let mainContainer = document.querySelector(".form-vagas");
             let div__sectionVagas = document.createElement("div");
-            div__sectionVagas.setAttribute("class", "section-vagas");
-
-            //         let div__inputsSpace = document.createElement("div");
-            //         div__inputsSpace.setAttribute("class", "inputs-space");
-            //             let h3__inputsSpace = document.createElement("h3");
-            //             h3__inputsSpace.textContent = "Início da Vaga";
-            //             let span__inputsSpace = document.createElement("span");
-            //             span__inputsSpace.setAttribute("class", "container-number-input");
-            //                 let input__span__inputsSpace = document.createElement("input");
-            //                 input__span__inputsSpace.setAttribute("id", String("inicio-vaga"+i));
-            //                 input__span__inputsSpace.setAttribute("name", String("inicio-vaga"+i));
-            //                 input__span__inputsSpace.setAttribute("type", "number");
-            //                 input__span__inputsSpace.setAttribute("min", "0");
-            //                 input__span__inputsSpace.required = true;
-
-            //         let div__inputsSpace2 = document.createElement("div");
-            //         div__inputsSpace2.setAttribute("class", "inputs-space");
-            //             let h3__inputsSpace2 = document.createElement("h3");
-            //             h3__inputsSpace2.textContent = "Fim da Vaga";
-            //             let span__inputsSpace2 = document.createElement("span");
-            //             span__inputsSpace2.setAttribute("class", "container-number-input");
-            //                 let input__span__inputsSpace2 = document.createElement("input");
-            //                 input__span__inputsSpace2.setAttribute("id", String("fim-vaga"+i));
-            //                 input__span__inputsSpace2.setAttribute("name", String("fim-vaga"+i));
-            //                 input__span__inputsSpace2.setAttribute("type", "number");
-            //                 input__span__inputsSpace2.setAttribute("min", "0");
-            //                 input__span__inputsSpace2.required = true;
-
-            //         let div__inputsSpace3 = document.createElement("div");
-            //         div__inputsSpace3.setAttribute("class", "inputs-space");
-            //             let h3__inputsSpace3 = document.createElement("h3");
-            //             h3__inputsSpace3.textContent = "Fita da Vaga";
-            //             let span__inputsSpace3 = document.createElement("span");
-            //             span__inputsSpace3.setAttribute("class", "container-number-input");
-            //                 let input__span__inputsSpace3 = document.createElement("input");
-            //                 input__span__inputsSpace3.setAttribute("id", String("fita-vaga"+i));
-            //                 input__span__inputsSpace3.setAttribute("name", String("fita-vaga"+i));
-            //                 input__span__inputsSpace3.setAttribute("type", "number");
-            //                 input__span__inputsSpace3.setAttribute("min", "0");
-            //                 input__span__inputsSpace3.setAttribute("max", "4");
-            //                 input__span__inputsSpace3.required = true;
-                    
-            //         let div__decriptionSpace = document.createElement("div");
-            //         div__decriptionSpace.setAttribute("class", "description-space");
-            //             let h1__descriptionSpace = document.createElement("h1");
-            //             h1__descriptionSpace.textContent = String("Vaga "+i);
-            //             let p__descriptionSpace = document.createElement("p");
-            //             p__descriptionSpace.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta";
-            div__sectionVagas.innerHTML = "";
+            div__sectionVagas.innerHTML = `
+                                            <div class="section-vagas">
+                                                <div class="inputs-space">
+                                                    <h3>Início da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="inicio-vaga${i}" name="inicio-vaga${i}" type="number" min="0" required>
+                                                    </span>
+                                                </div>
+                                                <div class="inputs-space">
+                                                    <h3>Fim da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="fim-vaga${i}" name="fim-vaga${i}" type="number" min="0" required>
+                                                    </span>
+                                                </div>
+                                                <div class="inputs-space">
+                                                    <h3>Fita da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="fita-vaga${i}" name="fita-vaga${i}" type="number" min="0" max="4" required>
+                                                    </span>
+                                                </div>
+                                                <div class="checks-space">
+                                                    <div class="box-demarcacao">
+                                                        <input type="checkbox" name="demarcacao${i}" id="chck-demarcacao${i}">
+                                                        <h3>Demarcação</h3>
+                                                    </div>
+                                                    <div class="box-piscante">
+                                                        <input type="checkbox" name="demarcacao${i}"id="chck-piscante${i}">
+                                                        <h3>Piscante</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="description-space">
+                                                    <h1>Vaga ${i}</h1>
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta</p>
+                                                </div>
+                                            </div>
+                                        `;
 
             const elementoExistente = document.querySelector('.animacao');
             mainContainer.insertBefore(div__sectionVagas, elementoExistente);
-
-            div__sectionVagas.appendChild(div__inputsSpace);
-            div__sectionVagas.appendChild(div__inputsSpace2);
-            div__sectionVagas.appendChild(div__inputsSpace3);
-            div__sectionVagas.appendChild(div__decriptionSpace);
-
-            div__inputsSpace.appendChild(h3__inputsSpace);
-            div__inputsSpace.appendChild(span__inputsSpace);
-            span__inputsSpace.appendChild(input__span__inputsSpace);
-
-            div__inputsSpace2.appendChild(h3__inputsSpace2);
-            div__inputsSpace2.appendChild(span__inputsSpace2);
-            span__inputsSpace2.appendChild(input__span__inputsSpace2);
-
-            div__inputsSpace3.appendChild(h3__inputsSpace3);
-            div__inputsSpace3.appendChild(span__inputsSpace3);
-            span__inputsSpace3.appendChild(input__span__inputsSpace3);
-
-            div__decriptionSpace.appendChild(h1__descriptionSpace);
-            div__decriptionSpace.appendChild(p__descriptionSpace);
-
             minhasVagas = i;
             botaoJaApertado = true;
         }
+        
     }
+    let vagas = document.querySelectorAll(".section-vagas");
+    console.log(vagas);
+    console.log(minhasVagas);
+    vagasExistentes = vagas;
 }
-
-const btnAddVagas = document.querySelector(".btn")
-btnAddVagas.addEventListener("click", function() {
-    if (vagasExistentes) {
-        vagasExistentes.forEach(vaga => {
-            if(botaoJaApertado){
-                console.log(numeroVagas, minhasVagas);
-                adicionaVaga(numeroVagas, minhasVagas);
-            }else{
-                minhasVagas = vaga.querySelector(".description-space").querySelector("h1").textContent;
-                minhasVagas = minhasVagas.split(" ");
-                minhasVagas = parseInt(minhasVagas[1]);
-                console.log(numeroVagas, minhasVagas);
-                adicionaVaga(numeroVagas, minhasVagas);
-            }
-        });
-    }else{
-        adicionaVaga(numeroVagas, 0);
-    }
-});
-
