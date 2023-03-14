@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="Imgs/LogoDW.ico" type="image/x-icon">
+  <style>
+            @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            /* width */
+            ::-webkit-scrollbar {
+              width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+              background: #243b55;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+              background: #3c6491;
+              border-radius: 20px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+              background: #fdb913;
+            }
+
+            html {
+              height: 100%;
+            }
+
+            .logo {
+              background-size: 30% 30%;
+              float: right;
+              max-width: 500px;
+              padding-top: 24px;
+            }
+
+            body {
+              margin: 0;
+              font-family: sans-serif;
+              background-color: #243b55;
+              font-family: 'Exo', sans-serif;
+            }
+            .main-box {
+              padding-top: 20px;
+              top: 50%;
+              left: 50%;
+              width: 400px;
+              padding: 40px;
+              transform: translate(-50%, -50%);
+              background: #0F1823;
+              box-sizing: border-box;
+              box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+              border-radius: 10px;
+              font-family: 'Exo', sans-serif;
+            }
+            .main-box h2, h3 {
+              margin: 0 0 30px;
+              padding: 0;
+              color: #fdb913;
+              text-align: center;
+            }
+            .main-box .user-box {
+              position: relative;
+            }
+            .main-box .user-box input {
+              width: 100%;
+              padding: 10px 0;
+              font-size: 16px;
+              color: #fff;
+              margin-bottom: 30px;
+              border: none;
+              border-bottom: 1px solid #fdb913;
+              outline: none;
+              background: transparent;
+              font-family: 'Exo', sans-serif;
+              align-items: center;
+              text-align: center;
+            }
+            .main-box .user-box label {
+              position: absolute;
+              top: 0;
+              left: 0;
+              padding: 10px 0;
+              font-size: 16px;
+              color: #fff;
+              pointer-events: none;
+              transition: .5s;
+            }
+            .main-box .user-box input:focus~label,
+            .main-box .user-box input:valid~label {
+              top: -20px;
+              left: 0;
+              color: #fdb913;
+              font-size: 12px;
+            }
+            .main-box form .animacao {
+              position: relative;
+              display: inline-block;
+              padding: 10px 20px;
+              color: #fdb913;
+              font-size: 16px;
+              text-decoration: none;
+              text-transform: uppercase;
+              overflow: hidden;
+              margin-left: 20%;
+              margin-right: 20%;
+              transition: .5s;
+              letter-spacing: 4px
+            }
+            .main-box .animacao:hover {
+              background: #fdb913;
+              color: #0F1823;
+              border-radius: 5px;
+              box-shadow: 0 0 5px #fdb913,
+                0 0 25px #fdb913,
+                0 0 50px #fdb913,
+                0 0 100px #fdb913;
+            }
+            .main-box .animacao span {
+              position: absolute;
+              display: block;
+            }
+            .main-box .animacao span:nth-child(1) {
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(90deg, transparent, #fdb913);
+              animation: btn-anim1 1s linear infinite;
+            }
+            @keyframes btn-anim1 {
+              0% {
+                left: -100%;
+              }
+              50%,
+              100% {
+                left: 100%;
+              }
+            }
+            .main-box .animacao span:nth-child(2) {
+              top: -100%;
+              right: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(180deg, transparent, #fdb913);
+              animation: btn-anim2 1s linear infinite;
+              animation-delay: .25s
+            }
+            @keyframes btn-anim2 {
+              0% {
+                top: -100%;
+              }
+              50%,
+              100% {
+                top: 100%;
+              }
+            }
+            .main-box .animacao span:nth-child(3) {
+              bottom: 0;
+              right: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(270deg, transparent, #fdb913);
+              animation: btn-anim3 1s linear infinite;
+              animation-delay: .5s
+            }
+            @keyframes btn-anim3 {
+              0% {
+                right: -100%;
+              }
+          
+              50%,
+              100% {
+                right: 100%;
+              }
+            }
+            .main-box .animacao span:nth-child(4) {
+              bottom: -100%;
+              left: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(360deg, transparent, #fdb913);
+              animation: btn-anim4 1s linear infinite;
+              animation-delay: .75s
+            }
+            #InputIp {
+              text-align: center;
+            }
+            #input1 {
+              text-align: center;
+            }
+
+            #input2 {
+              text-align: center;
+            }
+
+            @keyframes btn-anim4 {
+              0% {
+                bottom: -100%;
+              }
+          
+              50%,
+              100% {
+                bottom: 100%;
+              }
+            }
+
+            select {
+              position: relative;
+              display: inline-block;
+              margin-bottom: 8%;
+              margin-top: 5%;
+              width: 100%;
+            }
+
+            .select select {
+              font-family: 'Exo', sans-serif;
+              font-size: medium;
+              display: inline-block;
+              width: 100%;
+              cursor: pointer;
+              padding: 10px 15px;
+              outline: 0;
+              border: 2px solid #fdb913;
+              border-radius: 31px;
+              background: #0F1823;
+              color: white;
+              appearance: none;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+            }
+
+            .select select::-ms-expand {
+              display: none;
+            }
+
+            .select select:hover,
+            .select select:focus {
+              color: #fdb913;
+              background: #0F1823;
+            }
+
+            .select select:disabled {
+              opacity: 0.5;
+              pointer-events: none;
+            }
+
+            .select select:hover~.select_arrow,
+            .select select:focus~.select_arrow {
+              border-color: #000000;
+            }
+
+            .select select:disabled~.select_arrow {
+              border-top-color: #cccccc;
+            }
+
+            .select option {
+              text-align: center;
+              border-radius: 20px;
+              font-family: 'Exo', sans-serif;
+            
+            }
+
+
+
+
+            .control {
+              font-family: arial;
+              display: block;
+              position: relative;
+              padding-left: 32px;
+              margin-bottom: 15px;
+              padding-top: 1px;
+              cursor: pointer;
+              font-size: 16px;
+            }
+
+            .control input {
+              position: absolute;
+              z-index: -1;
+              opacity: 0;
+            }
+
+            .control_indicator {
+              position: absolute;
+              top: -3px;
+              left: 0;
+              height: 21px;
+              width: 23px;
+              background: #0F1823;
+              border: 2px solid #fdb913;
+              border-radius: 3px;
+            }
+
+            .control:hover input~.control_indicator,
+            .control input:focus~.control_indicator {
+              background: #0F1823;
+            }
+
+            .control input:checked~.control_indicator {
+              background: #0F1823;
+            }
+
+            .control:hover input:not([disabled]):checked~.control_indicator,
+            .control input:checked:focus~.control_indicator {
+              background: #0F1823;
+            }
+
+            .control input:disabled~.control_indicator {
+              background: #ffffff;
+              opacity: 0.6;
+              pointer-events: none;
+            }
+
+            .control_indicator:after {
+              box-sizing: unset;
+              content: '';
+              position: absolute;
+              display: none;
+            }
+
+            .control input:checked~.control_indicator:after {
+              display: block;
+            }
+
+            .control-checkbox .control_indicator:after {
+              left: 9px;
+              top: 3px;
+              width: 4px;
+              height: 10px;
+              border: solid #ffffff;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+
+            .control-checkbox input:disabled~.control_indicator:after {
+              border-color: #0F1823;
+            }
+
+            .control-checkbox .control_indicator::before {
+              content: '';
+              display: block;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 4.5rem;
+              height: 4.5rem;
+              margin-left: -1.3rem;
+              margin-top: -1.3rem;
+              background: #2aa1c0;
+              border-radius: 3rem;
+              opacity: 0.5;
+              z-index: 99999;
+              transform: scale(0);
+            }
+
+            @keyframes s-ripple {
+              0% {
+                transform: scale(0);
+              }
+          
+              20% {
+                transform: scale(1);
+              }
+          
+              100% {
+                opacity: 0;
+                transform: scale(1);
+              }
+            }
+
+            @keyframes s-ripple-dup {
+              0% {
+                transform: scale(0);
+              }
+          
+              30% {
+                transform: scale(1);
+              }
+          
+              60% {
+                transform: scale(1);
+              }
+          
+              100% {
+                opacity: 0;
+                transform: scale(1);
+              }
+            }
+
+            .control-checkbox input+.control_indicator::before {
+              animation: s-ripple 250ms ease-out;
+            }
+
+            .control-checkbox input:checked+.control_indicator::before {
+              animation-name: s-ripple-dup;
+            }
+
+            .control-group {
+              color: white;
+            }
+
+            .main-box .titulo_link {
+              color: #fdb913;
+              text-decoration-line: initial;
+            }
+
+            .main-box .titulo_link:hover{
+              color: #0f1823;
+              border-radius: 20px;
+              background-color: #fdb913;
+              border: 1px solid #fdb913;
+              box-shadow: 0 0 5px #fdb913,
+                0 0 25px #fdb913,
+                0 0 50px #fdb913,
+                0 0 100px #fdb913;
+            }
+
+            details {
+              margin: 40px;
+            }
+            summary {
+              writing-mode: vertical-lr;
+              text-align: center;
+              padding: 15px 40px;
+              width: 40px;
+              height: 40px;
+              background-color: var(--primColor);
+              border: 2px solid var(--secoColor);
+              border-radius: 20px;
+              color: white;
+              cursor: pointer;
+              user-select: none;
+              outline: none;
+              transition: transform 200ms ease-in-out 0s;
+              transform: scale(2.1);
+              position: fixed;
+            }
+            summary::before,
+            summary::after {
+              position: static;
+              top: 0;
+              left: 0;
+              width: 40px;
+              height: 40px;
+              border-color: white;
+            }
+            summary::before {
+              content: "";
+            
+            }
+            summary::after {
+              content: "III";
+              letter-spacing: -1px;
+            }
+            summary:hover {
+              transform: scale(3.1);
+              color: #fdb913;
+            }
+            summary::marker {
+              font-size: 0;
+            }
+            summary::-webkit-details-marker {
+              display: none;
+            }
+            details[open] .menu {
+              animation-name: menuAnim;
+            }
+            details[open] summary::before {
+              content: "X";
+            }
+            details[open] summary::after {
+              content: "";
+            }
+            .menu {
+              margin-left: 55px;
+              padding-top: 24px;
+              position: fixed;
+              height: 0;
+              width: fit-content;
+              border-radius: 20px;
+              background-color: #243b55;
+              box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+              margin-top: 65px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              overflow: hidden;
+              animation: closeMenu 300ms ease-in-out forwards;
+            }
+            .menu a {
+              padding: 12px 40px;
+              margin: 0 16px;
+              color: white;
+              border-bottom: 2px solid #fdb913;
+              text-decoration: none;
+              text-align: center;
+              transition: filter 200ms linear 0s;
+            }
+            .menu a:nth-of-type(1) {
+              padding-top: 24px;
+            }
+            .menu a:nth-last-of-type(1) {
+              border-bottom: none;
+            }
+            .menu a:hover {
+              color: #fdb913;
+            }
+
+            details[open]::before {
+              animation: fadeMe 300ms linear forwards;
+            }
+            @keyframes menuAnim {
+              0% {
+                height: 0;
+              }
+              100% {
+                height: 312px;
+              }
+            }
+            @keyframes fadeMe {
+              0% {
+                opacity: 0.4;
+              }
+              100% {
+                opacity: 0;
+              }
+            }
+
+            header{
+                height: auto;
+            }
+
+            .navigation{
+              top: 0;
+              left: 0;
+              min-height: 100vh;
+              position: fixed;
+              background: #243b55; 
+              width: 40px;
+              box-shadow: 10px 0 0 #fcba12; 
+              border-left: 10px solid #243b55;
+              overflow-x: hidden;
+              transition: 0.5s;
+              z-index: 1000; 
+            }
+
+            .navigation:hover{
+                width: 200px;
+                z-index: 1000;
+            }
+
+            .navigation ul{
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              padding-left: 0;
+              padding-top: 30px;
+            }
+            .navigation ul li{
+              position: relative;
+              list-style: none;
+              width: 100%;
+              border-top-left-radius: 20px;
+              border-bottom-left-radius: 20px;
+            }
+            .navigation ul li a{
+              position: relative;
+              font-weight: bold;
+              display: flex;
+              width: 100%;
+              text-decoration: none;
+              color: #fff;
+            }
+            .navigation ul li a .icon{
+              position: relative;
+              display: block;
+              min-width: 40px;
+              height: 30px;
+              text-align: center;
+              line-height: 70px;
+            }
+            .navigation ul li a .icon ion-icon{
+              position: relative;
+              font-size: 1.5rem;
+              z-index: 1000;
+            }
+            .navigation ul li a .title{
+              position: relative;
+              display: block;
+              padding-left: 20px;
+              height: 60px;
+              line-height: 60px;
+              white-space: nowrap;
+            }
+
+            .navigation ul li.active{
+              background-color: #fcba12;
+              transition: .5s;
+            }
+
+            .navigation ul li.active a::before{
+              content: '';
+              position: absolute;
+              top: -30px;
+              right: 0;
+              width: 30px; 
+              height: 30px;
+              background: #243b55;
+              border-radius: 50%;
+              box-shadow: 15px 15px 0 #fcba12;
+              transition: .5s;
+            }
+            .navigation ul li.active a::after{
+              content: '';
+              position: absolute;
+              bottom: -30px;
+              right: 0;
+              width: 30px; 
+              height: 30px;
+              background: #243b55;
+              border-radius: 50%;
+              box-shadow: 15px -15px 0 #fcba12;
+              transition: .5s;
+            }
+
+            #main-bar-section{
+                padding: 2%;
+            }
+
+            #main-bar-section h1{
+                text-align: center;
+                color: #fcba12;
+            }
+
+            .main-bar-container{
+                background: #0F1823;
+                padding: 40px;    
+                width: 60%;
+                margin: 20px auto;
+                box-sizing: border-box;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+                border-radius: 10px;
+                margin-bottom: 50px;
+            }
+
+            .progress{
+                width: 100%;
+                height: 18px;
+                background-color: gray;
+                border-radius: 10px;
+            }
+
+            .progress .progress-bar{
+                width: 50%;
+                height: 100%;
+                background-color: #fcba12;
+                border-radius: 10px;
+                position: relative;
+                transition: all .5s;
+            }
+
+            .progress-bar span{
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: white;
+                font-weight: bold;
+            
+            }
+
+            .main-bar-container p{
+                margin-top: 20px;
+                text-align: center;
+                color: #fff;
+                font-weight: 700;
+            }
+
+
+            .vagas-section{
+                margin-top: 4%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .vagas-container{
+                background: #0F1823;
+                padding: 40px;    
+                width: 20%;
+                margin: 10px;
+                margin-bottom: 5%;
+                box-sizing: border-box;
+                box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+                border-radius: 10px;
+            }
+
+            .vagas-container p{
+                margin-top: 20px;
+                text-align: center;
+                color: #fff;
+                font-weight: 700;
+            }
+
+
+
+            .body-genius-config{
+              background: #0F1823;
+            }
+
+            .vagas-general h1{
+                display: inline;
+                color: #fcba12;
+                margin: 0;
+            }
+            .vagas-general{
+              text-align: center;
+            }
+
+
+            .container-config h1{
+              text-align: left;
+              text-transform: uppercase;
+              font-size: 32px;
+              font-family: 'Exo';
+              font-weight: 900;
+              letter-spacing: -2px;
+              margin-left: 7%;
+              color:#fcba12;
+            }
+
+            .container-config h3, h2{
+              text-transform: uppercase;
+            }
+
+            .add-vagas{
+              border-top: 8px double #fdb913;
+              padding-top: 2%;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              flex-wrap: wrap;
+              padding-bottom: 2%;
+              border-bottom: 3px dashed #fdb913;
+            }
+
+            .add-vagas .background-description-space{
+              background: #fcba12;
+              border-radius: 10px;
+              margin-left: -1%;
+              box-sizing: border-box;
+              box-shadow: rgba(0, 0, 0, 0.89) 5px 5px 2px;
+              transition: 2s;
+            }
+
+            .add-vagas .background-description-space:hover{
+              box-shadow: rgba(240, 221, 46, 0.4) 5px 5px, rgba(240, 204, 46, 0.3) 10px 10px, rgba(240, 211, 46, 0.2) 15px 15px;
+              transition: .8s;
+            }
+
+            .add-vagas .description-space{
+              margin-left: 16px;
+              width: 300px;
+              height: 154px;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+            }
+
+            .add-vagas .caixa-titulo-desc-space{
+              display: flex;
+              align-items: center;
+              text-transform: uppercase;
+              font-weight: 500;
+              letter-spacing: -2px;
+              word-spacing: -2px;
+              justify-content: flex-start;
+            }
+
+            .add-vagas .description-space p{
+              display: flex;
+              width: 300px;
+              font-size: 15.2px;
+              font-weight: 500;
+              color: #ffffff;
+              margin-top: 0;
+              line-height: 22px;
+              text-shadow: rgba(0, 0, 0, 0.571) 2.4px 2.4px 3.2px;
+            }
+
+
+            .add-vagas .icon-add-vagas{
+              font-size: 40px;
+              position: relative;
+              padding: 0;
+              margin-right: 10px;
+              margin-top: 3%;
+              align-self:flex-end;
+            }
+
+            .add-vagas .title-add-vagas{
+              font-size: 27.6px;
+            }
+
+            .add-vagas .inputs-space{
+              text-align: center;
+              box-sizing: border-box;
+              margin-left: -10%;
+            }
+
+            .add-vagas .inputs-space h3{
+              font-weight: 900;
+              padding: 0;
+              margin: 0;
+              margin-bottom: 10%;
+              text-transform: uppercase;
+              font-size: 23px;
+              text-align: center;
+            }
+
+            .add-vagas .inputs-space .container-number-input{
+              font-family: 'Exo';
+              font-weight: 800;
+              display: flex;
+              background-color: #fff;
+              border-radius: 40px;
+              box-shadow: 0 15px 25px rgba(0, 0, 0, 0, 0.15);
+            }
+
+            .add-vagas .inputs-space .container-number-input input[type="number"]{
+              -moz-appearance: textfield;
+              text-align: center;
+              font-weight: 500;
+              font-size: 25px;
+              border: none;
+              background-color: #ffffff;
+              color: #202030;
+            }
+            .add-vagas .inputs-space .container-number-input input::-webkit-inner-spin-button,
+            .add-vagas .inputs-space .container-number-input input::-webkit-inner-spin-button{
+              -webkit-appearance: none;
+              margin: 0;
+            }
+
+            .add-vagas .inputs-space .container-number-input button{
+              color: #fcba12;
+              background-color: #fff;
+              border: none;
+              font-size: 25px;
+              cursor: pointer;
+            }
+
+            .add-vagas .inputs-space .container-number-input #decrement{
+              padding: 10px 35px 10px 20px;
+              border-radius:40px 0 0 40px;
+            }
+            .add-vagas .inputs-space .container-number-input #increment{
+              padding: 10px 20px 10px 20px;
+              border-radius: 0 40px 40px 0; 
+            }
+
+            .btn{
+              margin: 0;
+              background: none;
+              border: 2px solid #fdb913;
+              color: #fcba12;
+              width: 130px;
+              height: 47px;
+              text-transform: uppercase;
+              border-radius: 49px;
+              font-family: 'Exo';
+              font-size: 1rem;
+              font-weight: 700;
+              transition: 1s ease-in;
+              position: relative;
+              left: 5%;
+              text-align: center;
+            }
+
+            .btn:hover{
+            margin: 0;
+            background: #fcba12;
+            border: solid #fcba12;
+            box-shadow: 0 0 5px #fcba12,
+                        0 0 25px #fcba12,
+                        0 0 50px #fcba12,
+                        0 0 100px #fcba12;
+            transition: 0.5s ease-in-out;
+            color: #fff;
+            cursor: pointer;
+            }
+
+            .background-vagas{
+              text-align: center;
+            }
+
+            .section-vagas{
+              position: relative;
+              left: 11%;
+              display: flex;
+              padding-top: 1%;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+              flex-wrap: wrap;
+              padding-bottom: 2%;
+              background: #243b55;
+              width: 80%;
+              margin-top: 20px;
+              border-radius: 0 0 20px 20px;
+              box-shadow: rgba(0, 0, 0, 0.89) 5px 5px 2px;
+              transition: 1s;
+            }
+
+            .section-vagas:hover{
+                box-shadow: rgba(27, 25, 103, 0.4) 5px 5px, rgba(26, 20, 77, 0.3)10px 10px;
+                transition: .8s;
+            }
+
+            .section-vagas .description-space{
+              margin-left: 16px;
+              width: 260px;
+              display: flex;
+              flex-direction: column;
+              justify-content: right;
+              text-align: right;
+            }
+
+            .section-vagas .inputs-space{
+              display:block;
+              text-align: center;
+            }
+
+            .section-vagas .box-demarcacao{
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-items: center;
+              margin-bottom: 6%;
+            }
+            .section-vagas .box-piscante{
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-items: center;
+              margin-top: 6%;
+            }
+            .section-vagas .description-space h1{
+              text-align: right;
+              margin:0;
+            }
+
+            .section-vagas .description-space p{
+              width: 220px;
+              font-weight: 300;
+              font-size: 14.9px;
+              color: #ffffff;
+              margin: 0 auto;
+              margin-top: 10px;
+            }
+
+            .section-vagas .inputs-space h3{
+              font-size: 15px;
+            }
+
+            .section-vagas .checks-space h3{
+              font-size: 15px;
+              margin: 0;
+              text-align: left;
+            }
+
+            .section-vagas .inputs-space .container-number-input input[type="number"] {
+              height: 30px;
+              border-radius: 40px;
+              border: 0;
+              box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;}
+            
+            .section-vagas .inputs-space .container-number-input {
+              position: relative;
+            }
+
+            .section-vagas .inputs-space .container-number-input input[type="number"]{
+              font-family: 'Exo';
+              font-weight: 600;
+              text-align: center;
+              background-color: #fff;
+              font-size: 1rem;
+            }
+
+            .background-vagas form .animacao {
+              position: relative;
+              display: inline-block;
+              padding: 5px 5px;
+              color: #fdb913;
+              font-size: 13px;
+              text-decoration: none;
+              text-transform: uppercase;
+              overflow: hidden;
+              margin-left: 10%;
+              margin-right: 10%;
+              margin-top: 2%;
+              transition: .5s;
+              letter-spacing: 4px;
+              text-align: center;
+              z-index: 1000;
+            }
+
+            .background-vagas .animacao:hover {
+              background: #fdb913;
+              color: #0F1823;
+              border-radius: 5px;
+              box-shadow: 0 0 5px #fdb913,
+                0 0 25px #fdb913,
+                0 0 50px #fdb913,
+                0 0 100px #fdb913;
+            }
+
+            .background-vagas .animacao span {
+              position: absolute;
+              display: block;
+            }
+
+            .background-vagas .animacao span:nth-child(1) {
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(90deg, transparent, #fdb913);
+              animation: btn-anim1 1s linear infinite;
+            }
+
+            @keyframes btn-anim1 {
+              0% {
+                left: -100%;
+              }
+          
+              50%,
+              100% {
+                left: 100%;
+              }
+            }
+
+            .background-vagas .animacao span:nth-child(2) {
+              top: -100%;
+              right: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(180deg, transparent, #fdb913);
+              animation: btn-anim2 1s linear infinite;
+              animation-delay: .25s
+            }
+
+            @keyframes btn-anim2 {
+              0% {
+                top: -100%;
+              }
+          
+              50%,
+              100% {
+                top: 100%;
+              }
+            }
+
+            .background-vagas .animacao span:nth-child(3) {
+              bottom: 0;
+              right: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(270deg, transparent, #fdb913);
+              animation: btn-anim3 1s linear infinite;
+              animation-delay: .5s
+            }
+
+            @keyframes btn-anim3 {
+              0% {
+                right: -100%;
+              }
+          
+              50%,
+              100% {
+                right: 100%;
+              }
+            }
+
+            .background-vagas .animacao span:nth-child(4) {
+              bottom: -100%;
+              left: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(360deg, transparent, #fdb913);
+              animation: btn-anim4 1s linear infinite;
+              animation-delay: .75s
+            }
+
+            input[type=submit] {
+              border-radius: 20px;
+              color: #fdb913;
+              background-color: #0f1823;
+              font-size: 19px;
+              border: 1px solid #0f1823;
+              padding: 15px 50px;
+              cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+              color: #0f1823;
+              border-radius: 20px;
+              background-color: #fdb913;
+              border: 1px solid #fdb913;
+            
+              box-shadow: 0 0 5px #fdb913,
+                0 0 25px #fdb913,
+                0 0 50px #fdb913,
+                0 0 100px #fdb913;
+            }
+          .quant-vagas{
+            display: none;
+          }
+  </style>
+
+  <title>Formulario Json</title>
+</head>
+
+
+<body class="body-genius-config">
+  <header>
+    <div class="navigation">
+      <ul>
+        <li id="list-vizu">
+          <a href="genius-vizualization.html">
+            <span class="icon"><ion-icon name="eye-outline"></ion-icon></span>
+            <span class="title">Vizualizar</span>
+          </a>
+        </li>
+  
+        <li id="list-config">
+          <a href="genius-config.html" id="configurar-menu">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="title">Configurar</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-config">
+        <h1>Genius Configuration</h1>
+      <div class="add-vagas">
+        <div class="background-description-space">
+          <div class="description-space">
+            <div class="caixa-titulo-desc-space">
+              <span class="icon-add-vagas"><ion-icon name="add-circle-outline"></ion-icon></span>
+              <span class="title-add-vagas">Adicionar Vagas</span>
+            </div>
+            <p>Configure aqui as vagas a serem adicionadas. Assim que adicionadas, poderão ser configuradas uma a uma.</p>
+          </div>
+        </div>
+        <div class="inputs-space">
+          <h3>Número de Vagas</h3>
+            <div class="container-number-input">
+              <button id="decrement" onclick="stepper(this)"> - </button>
+              <input type="number" min="0" max="60" step="1" name="quant-vagas" value="0" id="input-vagas" readonly required>
+              <button id="increment" onclick="stepper(this)"> + </button>
+            </div>
+        </div>
+        <a><button class="btn">Add Vagas</button></a>
+      </div>
+      <div class="background-vagas">
+        <form action="/apiresponse" method="post" class="form-vagas">
+          <input class="quant-vagas" type="number" name="quant-vagas" value="0">
+          <div class="animacao">
+            <span></span>
+            <span></span>
+            <a href="index.html"><input type="submit"></a><!--name="submitButton" value="Enviar"-->
+            <span></span>
+            <span></span>
+          </div>
+          
+        </form>
+      </div>
+        
+    </div>
+</main>
+  <!--JavaScript-->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"> </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    // Use uma função anônima para criar um escopo separado
+    (function() {
+    // Defina a variável currentPage no escopo da função
+    const currentPage = window.location.href;
+    // Armazene a variável no localStorage
+    localStorage.setItem('currentPage', currentPage);
+    })();
+    // Defina outra variável currentPage em outro escopo
+    const currentPage = localStorage.getItem('currentPage');
+    // Verifique se a página atual corresponde a um item de menu e aplique o estilo apropriado
+    if (currentPage.includes('genius-vizualization.html')) {
+        document.getElementById('list-vizu').classList.add('active');
+    } else if (currentPage.includes('genius-config.html')) {
+        document.getElementById('list-config').classList.add('active');
+    }
+</script>
+<script>
+var vagasExistentes = document.querySelectorAll(".section-vagas");
+var minhasVagas = 0;
+var numeroVagas;
+var botaoJaApertado;
+const inputNumber = document.getElementById("input-vagas");
+var input_quantVagas = document.querySelector(".quant-vagas");
+
+function stepper(btn){
+    let id = btn.getAttribute("id");
+    let min = inputNumber.getAttribute("min");
+    let max = inputNumber.getAttribute("max");
+    let step = inputNumber.getAttribute("step");
+    let val = inputNumber.getAttribute("value");
+    let calcStep = (id == "increment") ? (step*1) : (step * -1);
+    let newValue = parseInt(val)+ calcStep;
+    console.log(id, min, max, step, val);
+
+    if(newValue >= min && newValue <= max){
+        inputNumber.setAttribute("value", newValue);
+        numeroVagas = newValue;
+    }
+}
+
+
+const btnAddVagas = document.querySelector(".btn")
+btnAddVagas.addEventListener("click", function() {
+    console.log("clickado");
+    console.log(minhasVagas);
+    if (vagasExistentes.length > 0) {
+        console.log("oi");
+        vagasExistentes.forEach(vaga => {
+            if(!botaoJaApertado){
+                minhasVagas = vaga.querySelector(".description-space").querySelector("h1").textContent;
+                minhasVagas = minhasVagas.split(" ");
+                minhasVagas = parseInt(minhasVagas[1]);
+            }else{
+                return;
+            }
+        });
+        console.log(numeroVagas, minhasVagas);
+        adicionaVaga(numeroVagas, minhasVagas);
+    }else{
+        console.log(numeroVagas, minhasVagas);
+        adicionaVaga(numeroVagas, minhasVagas);
+    }
+});
+
+function adicionaVaga(quant_vagas, vagas_atuais){
+    if (quant_vagas == 0) {
+        return;
+    }else{
+        alert(quant_vagas);
+        for (let i = vagas_atuais+1; i <= (vagas_atuais + quant_vagas); i++) {
+            let mainContainer = document.querySelector(".form-vagas");
+            let div__sectionVagas = document.createElement("div");
+            div__sectionVagas.innerHTML = `
+                                            <div class="section-vagas">
+                                                <div class="inputs-space">
+                                                    <h3>Início da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="inicio-vaga${i}" name="inicio-vaga${i}" type="number" min="0" required>
+                                                    </span>
+                                                </div>
+                                                <div class="inputs-space">
+                                                    <h3>Fim da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="fim-vaga${i}" name="fim-vaga${i}" type="number" min="0" required>
+                                                    </span>
+                                                </div>
+                                                <div class="inputs-space">
+                                                    <h3>Fita da Vaga</h3>
+                                                    <span class="container-number-input">
+                                                        <input id="fita-vaga${i}" name="fita-vaga${i}" type="number" min="0" max="4" required>
+                                                    </span>
+                                                </div>
+                                                <div class="checks-space">
+                                                    <div class="box-demarcacao">
+                                                        <input type="checkbox" name="demarcacao${i}" id="chck-demarcacao${i}">
+                                                        <h3>Demarcação</h3>
+                                                    </div>
+                                                    <div class="box-piscante">
+                                                        <input type="checkbox" name="piscante${i}"id="chck-piscante${i}">
+                                                        <h3>Piscante</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="description-space">
+                                                    <h1>Vaga ${i}</h1>
+                                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta</p>
+                                                </div>
+                                            </div>
+                                        `;
+
+            const elementoExistente = document.querySelector('.animacao');
+            mainContainer.insertBefore(div__sectionVagas, elementoExistente);
+            minhasVagas = i;
+            botaoJaApertado = true;
+        }
+        let vagas = document.querySelectorAll(".section-vagas");
+        console.log(vagas);
+        console.log(minhasVagas);
+        vagasExistentes = vagas;
+        input_quantVagas.setAttribute("value", minhasVagas);
+        console.log(input_quantVagas.value);
+    }
+}
+</script>
+</body>
+
+</html>

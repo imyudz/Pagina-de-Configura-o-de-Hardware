@@ -1118,3 +1118,7 @@ input[type=submit]:hover {
     0 0 50px #fdb913,
     0 0 100px #fdb913;
 }
+
+.quant-vagas{
+  display: none;
+}

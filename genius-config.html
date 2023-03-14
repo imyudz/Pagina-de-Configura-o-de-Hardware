@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="Imgs/LogoDW.ico" type="image/x-icon">
   <link rel="stylesheet" href="style2.css">
-  <link rel="stylesheet" href="reset.css">
 
   <title>Formulario Json</title>
 </head>
@@ -58,41 +57,8 @@
         <a><button class="btn">Add Vagas</button></a>
       </div>
       <div class="background-vagas">
-        <form action="/apiresponse" method="post" class="form-vagas">
-          <div class="section-vagas">
-            <div class="inputs-space">
-              <h3>Início da Vaga</h3>
-              <span class="container-number-input">
-                <input id="inicio-vaga1" name="inicio-vaga1" type="number" min="0" required>
-              </span>
-            </div>
-            <div class="inputs-space">
-              <h3>Fim da Vaga</h3>
-              <span class="container-number-input">
-                <input id="fim-vaga1" name="fim-vaga1" type="number" min="0" required>
-              </span>
-            </div>
-            <div class="inputs-space">
-              <h3>Fita da Vaga</h3>
-              <span class="container-number-input">
-                <input id="fita-vaga1" name="fita-vaga1" type="number" min="0" max="4" required>
-              </span>
-            </div>
-            <div class="checks-space">
-              <div class="box-demarcacao">
-                <input type="checkbox" name="demarcacao" id="chck-demarcacao">
-                <h3>Demarcação</h3>
-              </div>
-              <div class="box-piscante">
-                <input type="checkbox" name="demarcacao" id="chck-piscante">
-                <h3>Piscante</h3>
-              </div>
-            </div>
-              <div class="description-space">
-                <h1>Vaga 1</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga ut dolorum nostrum, repudiandae volupta</p>
-              </div>
-          </div>
+        <form action="/geniusconfigured" method="post" class="form-vagas">
+          <input class="quant-vagas" type="number" name="quant-vagas" value="0">
           <div class="animacao">
             <span></span>
             <span></span>
@@ -102,8 +68,8 @@
           </div>
         </form>
       </div>
-        
     </div>
+
   </main>
   <!--JavaScript-->
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>

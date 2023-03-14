@@ -3,6 +3,7 @@ var minhasVagas = 0;
 var numeroVagas;
 var botaoJaApertado;
 const inputNumber = document.getElementById("input-vagas");
+var input_quantVagas = document.querySelector(".quant-vagas");
 
 function stepper(btn){
     let id = btn.getAttribute("id");
@@ -78,7 +79,7 @@ function adicionaVaga(quant_vagas, vagas_atuais){
                                                         <h3>Demarcação</h3>
                                                     </div>
                                                     <div class="box-piscante">
-                                                        <input type="checkbox" name="demarcacao${i}"id="chck-piscante${i}">
+                                                        <input type="checkbox" name="piscante${i}"id="chck-piscante${i}">
                                                         <h3>Piscante</h3>
                                                     </div>
                                                 </div>
@@ -94,10 +95,11 @@ function adicionaVaga(quant_vagas, vagas_atuais){
             minhasVagas = i;
             botaoJaApertado = true;
         }
-        
+        let vagas = document.querySelectorAll(".section-vagas");
+        console.log(vagas);
+        console.log(minhasVagas);
+        vagasExistentes = vagas;
+        input_quantVagas.setAttribute("value", minhasVagas);
+        console.log(input_quantVagas.value);
     }
-    let vagas = document.querySelectorAll(".section-vagas");
-    console.log(vagas);
-    console.log(minhasVagas);
-    vagasExistentes = vagas;
 }
